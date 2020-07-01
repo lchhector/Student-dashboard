@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "import",
+    "jsx-a11y"
+  ],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/jsx-one-expression-per-line": "off"
+  }
+}
