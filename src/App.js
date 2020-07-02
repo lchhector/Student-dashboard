@@ -3,6 +3,10 @@ import { hot } from 'react-hot-loader';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    // do smth here
+  }
+
   render() {
     return (
       <div className="App">
