@@ -1,0 +1,32 @@
+.application-item {
+  height: 50px;
+  width: 100%;
+  font-family: Poppins400;
+  text-align: left;
+
+  color: black;
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+  
+.application-item:hover {
+cursor: pointer;
+}
+
+td {
+width: 25%;
+font-family: Poppins500;
+padding: 0;
+padding-left: 50px;
+
+}
+
+.applications-company-icon {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 30px;
+}

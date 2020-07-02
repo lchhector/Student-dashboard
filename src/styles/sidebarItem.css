@@ -1,0 +1,17 @@
+.sidebar-item {
+  height: 50px;
+  width: 100%;
+  font-family: Poppins400;
+  text-align: left;
+  padding-left: 18%;
+
+  color: white;
+  background-color: #0c131c;
+  border: none;
+  outline: none;
+
+}
+
+.sidebar-item:hover {
+  cursor: pointer;
+}

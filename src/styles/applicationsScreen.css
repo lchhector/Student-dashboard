@@ -1,0 +1,17 @@
+.application-screen-container {
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+th {
+  width: 25%;
+  padding: 0;
+  padding-left: 50px;
+}
+
+.table-head {
+  margin-left: 50px;
+}

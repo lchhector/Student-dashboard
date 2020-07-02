@@ -1,0 +1,73 @@
+.job-entry-container {
+  position: relative;
+  height: 150px;
+  width: 85%;
+  min-width: 400px;
+  background-color: white;
+  margin: 10px;
+
+  border: none;
+  border-radius: 7px;
+  outline: none;
+
+  display: flex;
+  flex-direction: row;
+
+
+  font-family: Poppins500;
+  box-shadow: 0px 2px 6px #cec9c9;
+}
+
+.logo-container {
+    width: 80px;
+    margin-top: 20px;
+    align-self: flex-start;
+
+
+}
+
+.company-logo {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.job-text-container {
+  height: inherit;
+  width: 82%;
+  text-align: left;
+  margin-top: 12px; 
+}
+
+.job-title {
+  max-width: 60%;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.job-attributes {
+  margin-top: 6px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.50);
+}
+
+.entry-bar {
+  position: absolute;
+  top: 13%;
+  right: 3%;
+}
+
+.location-icon {
+  height: 14px;
+  width: 14px;
+}
+
+.company-location {
+  display: flex;
+  flex-direction: row;
+}
+
+.location-text {
+  margin-left: 5px;
+}

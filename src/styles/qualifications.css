@@ -1,0 +1,13 @@
+.qualifications-container {
+  height: 180px;
+  width: 530px;
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 7px;
+  box-shadow: 0px 2px 6px #cec9c9;
+  font-size: 15px;
+}
+
+.preferred-qualifications {
+  font-family: Poppins500;
+}

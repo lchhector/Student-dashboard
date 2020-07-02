@@ -1,0 +1,16 @@
+.profile-progress-bar{
+    position: relative;
+    height: 15px;
+    width: 120px;
+    border-radius: 50px;
+    border: 1px solid #333;
+}
+
+.profile-filler-bar{
+    background: #1DA598;
+    height: 100%;
+    border-radius: inherit;
+    transition: width .2s ease-in;
+    display: flex;
+    justify-content: center;
+}
