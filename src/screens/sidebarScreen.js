@@ -40,8 +40,6 @@ class SidebarScreen extends React.Component {
           <div> <ProfileProgressBar percentage="20" /></div>
           <div>20% completed</div>
         </section>
-
-
       </div>
     );
   }

@@ -1,5 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const InlineChunkHtmlPlugin = require('html-webpack-inline-chunk-plugin');
+const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -36,7 +39,7 @@ module.exports = {
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
+    path: path.resolve(__dirname, '/dist'),
     publicPath: '/dist/',
     filename: 'bundle.js',
   },
@@ -46,5 +49,11 @@ module.exports = {
     publicPath: 'http://localhost:3000/dist/',
     hotOnly: true,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/\.(js|css)$/]),
+  ],
 };
