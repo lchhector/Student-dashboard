@@ -28,7 +28,7 @@ class SidebarScreen extends React.Component {
       <div className="mh-sidebar-container">
         <img src={matchubLogo} alt="MatcHub logo" className="mh-sidebar-container__matchub-logo" />
         <div className="mh-sidebar-container__logo-text">MatcHub</div>
-        <div style={{ height: '15vh' }} />
+        <div style={{ height: '9vh' }} />
         <Sidebar value={selected} onChange={this._onChange}>
           <Sidebar.Item value="job-recommendations">Job Recommendations</Sidebar.Item>
           <Sidebar.Item value="applications">My Applications</Sidebar.Item>
