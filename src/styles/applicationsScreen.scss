@@ -1,0 +1,40 @@
+.mh-application-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  &__header-text {
+    font-size: 20px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+    margin-left: 2%;
+  }
+
+  &__table-head {
+    width: 100%;
+    text-align: left;
+    max-width: 1200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    &__cell {
+      width: 25%;
+      padding: 0;
+      padding-left: 50px;
+    }
+  }
+}
+
+table {
+
+}
+
+// th {
+//   width: 25%;
+//   padding: 0;
+//   padding-left: 50px;
+// }
+

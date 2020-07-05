@@ -1,5 +1,9 @@
 import React from 'react';
 import { Sidebar } from '../components/index';
+import matchubLogo from '../assets/matchub.png';
+import profileImage from '../assets/sampleProfile.jpg';
+import ProfileProgressBar from '../components/ProfileProgressBar';
+import '../styles/sidebarScreen.scss';
 
 class SidebarScreen extends React.Component {
   constructor(props) {
@@ -21,13 +25,24 @@ class SidebarScreen extends React.Component {
   render() {
     const { selected } = this.state;
     return (
-      <>
-        <div style={{ height: '20vh' }} />
-        <Sidebar value={selected} onChange={this._onChange} >
-          <Sidebar.item value="job-recommendations">Job Recommendations</Sidebar.item>
-          <Sidebar.item value="applications">My Applications</Sidebar.item>
+      <div className="mh-sidebar-container">
+        <img src={matchubLogo} alt="MatcHub logo" className="mh-sidebar-container__matchub-logo" />
+        <div className="mh-sidebar-container__logo-text">MatcHub</div>
+        <div style={{ height: '15vh' }} />
+        <Sidebar value={selected} onChange={this._onChange}>
+          <Sidebar.Item value="job-recommendations">Job Recommendations</Sidebar.Item>
+          <Sidebar.Item value="applications">My Applications</Sidebar.Item>
         </Sidebar>
-      </>
+        <div style={{ height: '25vh' }} />
+        <section className="mh-sidebar-container__user-profile">
+          <img src={profileImage} alt="Profile pic" className="mh-sidebar-container__user-profile__image" />
+          <div>Profile</div>
+          <div> <ProfileProgressBar percentage="20" /></div>
+          <div>20% completed</div>
+        </section>
+
+
+      </div>
     );
   }
 }

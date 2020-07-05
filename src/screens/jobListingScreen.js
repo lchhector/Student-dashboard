@@ -1,79 +1,74 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { JobListing } from '../components/index';
+import '../styles/jobListingScreen.scss';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class JobListingScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: 'job-1',
-    };
-    this._onChange = this._onChange.bind(this);
-  }
-
-  _onChange(selected) {
-    this.setState({
-      selected,
-    });
-    console.log('123');
-  }
-
   render() {
-    const { selected } = this.state;
-    const { currentScreen } = this.props;
-    if (currentScreen !== 'job-recommendations') {
-      return null;
-    }
-    const jobsDatabase = [
-      {
-        id: 1,
-        name: 'Business Development Intern 1',
-        company: 'JR Group',
-        country: 'Singapore',
-        jobDescription: 'xyz',
-      },
-      {
-        id: 2,
-        name: 'Intern 2',
-        company: 'JR Group',
-        country: 'Singapore',
-        jobDescription: 'abc',
-      },
-      {
-        id: 3,
-        name: 'Fulltime 3',
-        company: 'JR Group',
-        country: 'Singapore',
-        jobDescription: 'def',
-      },
-      {
-        id: 4,
-        name: 'Partime 4',
-        company: 'JR Group',
-        country: 'Singapore',
-        jobDescription: 'ghi',
-      },
-      {
-        id: 5,
-        name: 'Freelance 5',
-        company: 'JR Group',
-        country: 'Singapore',
-        jobDescription: 'jkl',
-      },
-    ];
-
+    const { handleJobSelection, currentJobSelection } = this.props;
     return (
       <>
-        <JobListing value={selected} onChange={this._onChange}>
-          <JobListing.entry value="job-reco"> Data Intern</JobListing.entry>
-          <JobListing.entry value="applications"> Google software engineer</JobListing.entry>
-          <JobListing.entry value="apple"> Business Development Intern </JobListing.entry>
-          <JobListing.entry value="orange"> Sales Management Executive </JobListing.entry>
-          <JobListing.entry value="pear"> Financial Management Trainee </JobListing.entry>
+        <div className="mh-job-listing-header" />
+        <JobListing value={currentJobSelection} onChange={handleJobSelection}>
+          <JobListing.Entry value="job-reco"> Data Intern</JobListing.Entry>
+          <JobListing.Entry value="applications"> Google software engineer</JobListing.Entry>
+          <JobListing.Entry value="apple"> Business Development Intern </JobListing.Entry>
+          <JobListing.Entry value="orange"> Sales Management Executive </JobListing.Entry>
+          <JobListing.Entry value="banana"> Sales Management Executive </JobListing.Entry>
+          <JobListing.Entry value="chilli"> Sales Management Executive </JobListing.Entry>
         </JobListing>
+        <div style={{ height: '25px' }} />
       </>
     )
   }
-
 }
 
+JobListingScreen.propTypes = {
+  handleJobSelection: PropTypes.func.isRequired,
+  currentJobSelection: PropTypes.string,
+};
+
+JobListingScreen.defaultProps = {
+  currentJobSelection: null,
+};
+
 export default JobListingScreen;
+
+// const jobsDatabase = [
+//   {
+//     id: 1,
+//     name: 'Business Development Intern 1',
+//     company: 'JR Group',
+//     country: 'Singapore',
+//     jobDescription: 'xyz',
+//   },
+//   {
+//     id: 2,
+//     name: 'Intern 2',
+//     company: 'JR Group',
+//     country: 'Singapore',
+//     jobDescription: 'abc',
+//   },
+//   {
+//     id: 3,
+//     name: 'Fulltime 3',
+//     company: 'JR Group',
+//     country: 'Singapore',
+//     jobDescription: 'def',
+//   },
+//   {
+//     id: 4,
+//     name: 'Partime 4',
+//     company: 'JR Group',
+//     country: 'Singapore',
+//     jobDescription: 'ghi',
+//   },
+//   {
+//     id: 5,
+//     name: 'Freelance 5',
+//     company: 'JR Group',
+//     country: 'Singapore',
+//     jobDescription: 'jkl',
+//   },
+// ];

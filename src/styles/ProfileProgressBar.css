@@ -1,9 +1,11 @@
 .profile-progress-bar{
+    display: inline-block;
     position: relative;
     height: 15px;
     width: 120px;
     border-radius: 50px;
     border: 1px solid #333;
+    vertical-align: auto;
 }
 
 .profile-filler-bar{

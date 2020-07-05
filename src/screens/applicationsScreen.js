@@ -1,10 +1,9 @@
 import React from 'react';
 import { Applications } from '../components/index';
-import '../styles/applicationsScreen.css';
+import '../styles/applicationsScreen.scss';
 import fbIcon from '../assets/facebook.png';
 import appleIcon from '../assets/apple.png';
 import googleIcon from '../assets/google.png';
-
 
 class ApplicationsScreen extends React.Component {
   constructor(props) {
@@ -22,35 +21,34 @@ class ApplicationsScreen extends React.Component {
   }
 
   render() {
-    const { currentScreen } = this.props;
     const { selected } = this.state;
-    if (currentScreen !== 'applications') {
-      return null;
-    }
     return (
-      <div className="application-screen-container">
-        <header>Your Applications (5)</header>
-        <table>
-          <tr className="table-head">
-            <th>Company</th>
-            <th>Role</th>
-            <th>Employment Type</th>
-            <th>Status</th>
-          </tr>
+      <div className="mh-application-container">
+        <header className="mh-application-container__header-text">Your Applications (3)</header>
+        <table className="mh-application-container__table-head">
+          <tbody>
+            <tr>
+              <th className="mh-application-container__table-head__cell">Company</th>
+              <th className="mh-application-container__table-head__cell">Role</th>
+              <th className="mh-application-container__table-head__cell">Employment Type</th>
+              <th className="mh-application-container__table-head__cell">Status</th>
+            </tr>
+          </tbody>
         </table>
         <Applications value={selected} onChange={this._onChange}>
-          <Applications.item value="apple" name="Apple" icon={appleIcon} role="Software Engineer" emType="Full-time" status="Pending">
-            <Applications.item.info> show more info</Applications.item.info>
-          </Applications.item>
-          <Applications.item value="google" name="Google" icon={googleIcon} role="Marketing" emType="Part-time" status="Pending">
-            <Applications.item.info> show more info</Applications.item.info>
-          </Applications.item>
-          <Applications.item value="facebook" name="Facebook" icon={fbIcon} role="Data Intern" emType="Full-time" status="pending">
-            <Applications.item.info> show more info </Applications.item.info>
-          </Applications.item>
+          <Applications.Item value="apple" name="Apple" icon={appleIcon} role="Software Engineer" emType="Full-time" status="Pending">
+            <Applications.Item.Info>show more info</Applications.Item.Info>
+          </Applications.Item>
+          <Applications.Item value="google" name="Google" icon={googleIcon} role="Marketing" emType="Part-time" status="Pending">
+            <Applications.Item.Info> show more info</Applications.Item.Info>
+          </Applications.Item>
+          <Applications.Item value="facebook" name="Facebook" icon={fbIcon} role="Data Intern" emType="Full-time" status="Pending">
+            <Applications.Item.Info> show more info </Applications.Item.Info>
+          </Applications.Item>
         </Applications>
+        <div style={{ height: '20px' }} />
       </div>
-    )
+    );
   }
 }
 

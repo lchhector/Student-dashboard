@@ -1,0 +1,39 @@
+.mh-sidebar-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.75);
+  position: relative;
+
+  &__matchub-logo {
+    margin-top: 20px;
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+  }
+
+  &__logo-text {
+    transform: translateY(-20px);
+    font-weight: 200;
+    font-size: 15px;
+  }
+
+  &__user-profile {
+    position: absolute;
+    bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+
+    &__image {
+      height: 80px;
+      width: 80px;
+      border-radius: 40px;
+      margin-bottom: 10px;
+    }
+  }
+}
+

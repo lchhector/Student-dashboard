@@ -1,6 +1,7 @@
 .qualifications-container {
-  height: 180px;
-  width: 530px;
+ 
+  width: inherit;
+  overflow-y: scroll;
   background-color: white;
   padding: 15px 25px;
   border-radius: 7px;

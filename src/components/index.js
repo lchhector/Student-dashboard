@@ -1,5 +1,5 @@
 import Sidebar from './sidebar';
-import SidebarItem from  './sidebarItem';
+import SidebarItem from './sidebarItem';
 import JobListing from './jobListing';
 import JobListingEntry from './jobListingEntry';
 import JobDetails from './jobDetails';
@@ -11,10 +11,10 @@ import ApplicationsItem from './applicationsItem';
 import ApplicationsItemInfo from './applicationsItemInfo';
 import BitesizeInfo from './bitesizeInfo';
 
-Sidebar.item = SidebarItem;
-JobListing.entry = JobListingEntry;
-Applications.item = ApplicationsItem;
-Applications.item.info = ApplicationsItemInfo;
+Sidebar.Item = SidebarItem;
+JobListing.Entry = JobListingEntry;
+Applications.Item = ApplicationsItem;
+Applications.Item.Info = ApplicationsItemInfo;
 
 export {
   Sidebar,

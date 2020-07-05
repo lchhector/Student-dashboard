@@ -12,15 +12,26 @@
 }
   
 .application-item:hover {
-cursor: pointer;
+  cursor: pointer;
 }
 
-td {
-width: 25%;
-font-family: Poppins500;
-padding: 0;
-padding-left: 50px;
+.applications-table {
+  width: 100%;
+  text-align: left;
+}
 
+.td-company {
+  width: 25%;
+  font-family: Poppins500;
+  padding: 0;
+  padding-left: 50px;
+}
+
+.table-data {
+  width: 25%;
+  font-family: Poppins500;
+  padding: 0;
+  padding-left: 50px;
 }
 
 .applications-company-icon {

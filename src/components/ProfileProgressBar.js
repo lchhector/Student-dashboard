@@ -1,6 +1,6 @@
 import React from 'react';
-import './ProfileProgressBar.css';
-import propTypes from 'prop-types';
+import '../styles/ProfileProgressBar.css';
+import PropTypes from 'prop-types';
 
 function ProfileProgressBar(props) {
   const { percentage } = props;
@@ -12,7 +12,7 @@ function ProfileProgressBar(props) {
 }
 
 ProfileProgressBar.propTypes = {
-  percentage: propTypes.number,
+  percentage: PropTypes.string.isRequired,
 };
 
 export default ProfileProgressBar;

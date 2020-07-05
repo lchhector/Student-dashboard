@@ -1,14 +1,18 @@
 import React from 'react';
-import './App.css';
-import { SidebarScreen, JobListingScreen, JobDetailsScreen, ApplicationsScreen } from './screens/index';
+import './App.scss';
+import {
+  SidebarScreen, JobListingScreen, JobDetailsScreen, ApplicationsScreen,
+} from './screens/index';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentScreen: 'job-recommendations',
+      currentJobSelection: null,
     };
     this._handleNavgiation = this._handleNavgiation.bind(this);
+    this._handleJobSelection = this._handleJobSelection.bind(this);
   }
 
   _handleNavgiation(value) {
@@ -17,37 +21,41 @@ class App extends React.Component {
     });
   }
 
-  render() {
-    const { currentScreen } = this.state;
-    return (
-      <div id="full-container" >
-        <div id="wrapper">
-          <body id="layout-3-parts">
-            <aside className="side-bar">
-              <SidebarScreen handleNav={this._handleNavgiation} />
-            </aside>
-            {/* ====================================== */}
-            {(currentScreen === 'job-recommendations')
-              && (
-                <section id="content-container">
-                  <section id="middle-container">
-                    <JobDetailsScreen currentScreen={currentScreen} />
-                  </section>
-                  <section id="right-container">
-                    <JobListingScreen currentScreen={currentScreen} />
-                  </section>
-                </section>
-              )}
-            {/* ====================================== */}
+  _handleJobSelection(value) {
+    this.setState({
+      currentJobSelection: value,
+    });
+  }
 
-            {(currentScreen === 'applications')
-              && (
-                <section id="applications-content-container">
-                  <ApplicationsScreen currentScreen={currentScreen} />
-                </section>
-              )}
-          </body>
-        </div>
+  render() {
+    const { currentScreen, currentJobSelection } = this.state;
+    return (
+      <div className="mh-dashboard">
+        <aside className="mh-dashboard__side-bar col-2 phone-sidebar">
+          <SidebarScreen handleNav={this._handleNavgiation} />
+        </aside>
+
+        {(currentScreen === 'job-recommendations')
+          && (
+            <>
+              <section style={(currentJobSelection) ? {} : { display: 'none' }} className="mh-dashboard__middle-container col-6 phone-job-details">
+                <JobDetailsScreen currentJobSelection={currentJobSelection} />
+              </section>
+              <section style={(currentJobSelection) ? {} : { width: '83.33%' }} className="mh-dashboard__right-container col-4 phone-job-listing">
+                <JobListingScreen
+                  handleJobSelection={this._handleJobSelection}
+                  currentJobSelection={currentJobSelection}
+                />
+              </section>
+            </>
+          )}
+
+        {(currentScreen === 'applications')
+          && (
+            <section className="mh-dashboard__applications-container col-10">
+              <ApplicationsScreen currentScreen={currentScreen} />
+            </section>
+          )}
       </div>
     );
   }
